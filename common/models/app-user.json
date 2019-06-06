@@ -1,0 +1,59 @@
+{
+  "name": "AppUser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "getFullName"
+    }
+  ],
+  "methods": {
+    "prototype.getFullName": {
+      "accepts": [
+        {
+          "arg": "prefix",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "fullname",
+          "type": "string",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "get full name",
+      "http": [
+        {
+          "path": "/fullName",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}
