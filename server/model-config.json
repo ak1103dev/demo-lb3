@@ -14,30 +14,30 @@
     ]
   },
   "User": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "AppUser": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": true
   }
 }
